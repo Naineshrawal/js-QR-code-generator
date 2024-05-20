@@ -1,0 +1,1 @@
+# js-QR-code-generator
