@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Free QR Code Generator</title>
+    <link rel="stylesheet" href="style.css">
+    
+</head>
+<body>
+    <header>
+        <a href="index.html">Home</a>
+        <a href="howItWorks.html">How It Works ?</a>
+    </header>
+    <div class="container">
+        <p>Enter Your Text / Data / URLs</p>
+        <input type="text" placeholder="text or URL" id="qrText">
+        <div  id="imgBox">
+
+            <img  src="" id="qrImage">
+            
+        </div>
+        <button id="download-btn"><a id="download" href="" download="">Download</a></button>
+        <button id="generate" >Generate QR Code</button>
+    </div>
+</body>
+<script>
+
+    let imgBox = document.querySelector('#imgBox');
+    let qrImage = document.getElementById('qrImage');
+    let qrText = document.getElementById('qrText');
+    let getDownload = document.getElementById('download')
+    let downloadBtn = document.getElementById('download-btn')
+
+
+    document.querySelector('#generate').addEventListener('click', function generateQR(){
+
+        if(qrText.value.length > 0){
+            console.log("error");
+            let imgSrc =  "https://api.qrserver.com/v1/create-qr-code/?size=150x150&data="
+            + qrText.value + ".jpeg"
+
+            qrImage.src = imgSrc;
+            getDownload.src = imgSrc
+            imgBox.classList.add('show-img');
+            setTimeout(()=>{
+
+                downloadBtn.style.display = "block"
+            },2000)
+
+        } else { 
+            qrText.classList.add('error')
+            console.log("error");
+            setTimeout(()=>{
+                qrText.classList.remove('error')
+
+            },2000)
+            }
+    
+}   )
+
+
+
+
+   
+
+
+</script>
+</html>

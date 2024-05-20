@@ -1,0 +1,160 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'poppins', sans-serif;
+    box-sizing: border-box;
+}
+body{
+    background: #daade1;
+}
+
+header{
+    display: flex;
+    justify-content: space-between;
+    height: 45px;
+    padding: 0 20px;
+    align-items: center;
+    gap: 20px;
+    background-color: #00023b;
+    
+}
+header a{
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+    font-size: 18px;
+    cursor: pointer;
+    /* border-top: 0px solid ;
+    border-bottom: 0px solid ;
+    border-right: 0px solid ;
+    border-left: 2px solid #1116af; */
+    padding-left: 5px;
+}
+
+header a:hover{
+    color: rgb(7, 172, 178);
+    /* color: #1116af; */
+    transition: 0.3s ease-in-out;
+    
+}
+
+.container{
+    width: 400px;
+    padding: 25px 35px;
+    position: absolute;
+    top: 50vh;
+    left: 50vw;
+    transform: translate(-50%,-45%);
+    background: #fff;
+    
+    border-radius: 10px;
+
+}
+.container p {
+    font-weight: 600;
+    font-size: 15px;
+    margin-bottom: 10px;
+}
+
+.container input{
+    width: 100%;
+    height: 50px;
+    border: 1px solid #494eea;
+    outline: 0;
+    padding: 10px;
+    margin: 10px 0 20px;
+
+}
+
+.container button{
+    color: rgb(255, 255, 255);
+    font-size: 20px;
+    font-weight: 600;
+    width: 100%;
+    height: 50px;
+    background: #494eea;
+    border: none;
+    outline: 0;
+    border-radius: 5px;
+    box-shadow: 0 10px 10px   rgba(0,0,0,0.4);
+    cursor: pointer;
+    margin: 20px 0;
+    font-weight: 500;
+
+}
+.container button a{
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+}
+#download-btn{
+    display: none;
+    animation: popups 1s linear;
+}
+
+
+.container button:hover{
+    scale: 1.05;
+    transition: 0.2s ease-in-out;
+    color: black;
+}
+
+#imgBox{
+    width: 200px;
+    border-radius: 5px;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 1.5s;
+}
+
+#imgBox img{
+    width: 100%;
+    padding: 10px;
+}
+
+#imgBox.show-img{
+    max-height: 300px;
+    margin: 10px auto;
+    border: 1px solid #d1d1d1;
+}
+
+.error{
+    animation: shake 0.1s linear 10;
+    /* background-color: red; */
+    /* border: 2px solid #ea4949;
+     */
+    
+    
+
+}
+
+@keyframes  popups{
+    0%{
+        transform: scale(0.5);
+    }
+    100%{
+        transform: scale(1);
+
+    }
+}
+
+@keyframes shake{
+    0%{
+        transform: translate(0);
+        border: 2px solid #ea4949;
+    }
+    25%{
+        transform: translate(-5px);
+        border: 2px solid #ea4949;
+    }
+    50%{
+        transform: translate(0);
+        border: 2px solid #ea4949;
+    }
+    75%{
+        transform: translate(5);
+        border: 2px solid #ea4949;
+    }
+    100%{
+        transform: translate(0);
+        border: 2px solid #ea4949;
+    }
+}
